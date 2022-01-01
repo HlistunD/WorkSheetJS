@@ -196,47 +196,46 @@ for (let key of keys) {
         }
 
         //New YorkTimes
-/*
+
         const apiData = {
-            key: "QC1r1NhEoX89ZIN29Aq6s471Xkq36Cvd",
+            keyNews: "QC1r1NhEoX89ZIN29Aq6s471Xkq36Cvd",
         }
 
         const changeNews = document.querySelector(".changeNews");
 
         async function dataInfo() {
-            const res = await fetch (`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiData.key}`);
-            const data = await res.json();
-            showNews(data.results)
+            const firstData = await fetch (`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiData.keyNews}`);
+            const finallyData = await firstData.json();
+            showNews(finallyData.results);
+            changeNews.addEventListener('click', () => {
+                showNews(finallyData.results)
+            });
             }
-            
-            changeNews.addEventListener('click', showNews);
+            let i = 0;
 
-            function showNews(data) {
-
-            for (let i = 0; i < 19; i++) {
+            function showNews(finallyData) {
+            i++;
+            if(i > finallyData.length - 1) {
+                i = 0
+            }
 
             let title = document.querySelector('.title');
-            console.log(data)
-            title.innerHTML = `${data.results[i].source}`;
+            title.innerHTML = `${finallyData[i].source}`;
 
             let secondTitle = document.querySelector('.secondTitle');
-            secondTitle.innerHTML = `${data.results[i].title}`
+            secondTitle.innerHTML = `${finallyData[i].title}`
 
             let article = document.querySelector('.article')
-            article.innerHTML = `${data.results[i].abstract}`
+            article.innerHTML = `${finallyData[i].abstract}`
 
             let location = document.querySelector('.location')
-            location.innerHTML = `${data.results[i].geo_facet[0]}`
+            location.innerHTML = `${finallyData[i].geo_facet[0]}`
             
             let publishDate = document.querySelector('.publishDate')
-            publishDate.innerHTML = `${data.results[i].published_date}`
-            }
+            publishDate.innerHTML = `${finallyData[i].published_date}`
             }
 
             dataInfo();
-            showNews();
-
-*/
 
 
         //ToDoList

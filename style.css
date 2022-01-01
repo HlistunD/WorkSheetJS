@@ -204,6 +204,9 @@
 .article, .location, .publishDate {
     color: #0d0d0d;
 }
+.publishDate{
+    font-size: 10px;
+}
 .secondTitle{
     color: #0d0d0d;
     font-size: 20px;
