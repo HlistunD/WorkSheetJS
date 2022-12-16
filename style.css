@@ -1,22 +1,23 @@
 .app {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content:flex-start;
+    align-items:flex-start;
+    width: 35%;
+    margin: 5%;
 }
 .calculator {
     background-color: #706C61;
-    width: 100%;
+    width: 40%;
     max-width: 375px;
-    min-height: 640px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
     overflow: hidden;
 }
 .display {
-    min-height: 200px;
-    padding: 1.5rem;
+    min-height: 100px;
+    padding: 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -25,12 +26,12 @@
     flex: 1 1 0%;
 }
 .display .input {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 .display .output {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 100;
     max-width: 100%;
     width: 100%;
     overflow: auto;
@@ -71,8 +72,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 100;
 }
 .keys .key:hover {
     box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2 );
