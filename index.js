@@ -1,3 +1,5 @@
+//Calculator
+
 const keys = document.querySelectorAll('.key');
 const displayInput = document.querySelector('.display .input');
 const displayOutput = document.querySelector('.display .output');
@@ -115,42 +117,54 @@ for (let key of keys) {
             return inputArray.join("");
         }
 
+//API WEATHER
+
         const api = {
             key: "a55b1163ed97c26eb450f23d0752a200",
-            baseurl: "https://openweathermap.org/"
+            endpoint: "https://api.openweathermap.org/data/2.5/"
         }
-        const searchBox = document.querySelector('.searchBox');
-        searchBox.addEventListener('keypress', setQuery);
 
-        function setQuery(e) {
-            if (e.keyCode === 13 ) {
-                getResults(searchBox.value);
+        const searchBox = document.querySelector('.searchBox')
+        searchBox.addEventListener('keypress', enter)
+
+        function enter(e) {
+            if (e.keyCode === 13) {
+                getInfo(searchBox.value);
             }
         }
 
-        function getResults(query) {
-            fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-            .then(weather => {
-                return weather.json();
-            }).then(displayResults);
+        async function getInfo(data) {
+            const res = await fetch(`${api.endpoint}weather?q=${data}&units=metric&appID=${api.key}`);
+            const result = await res.json();
+            displayResult(result);
         }
-        function displayResults(weather) {
-            console.log(weather)
-            let city = document.querySelector('.location .city');
-            city.innerText = `${weather.name}, ${weather.sys.country}`;
-        
-            let now = new Date();
-            let date = document.querySelector('.location .date');
-            date.innerText = dateBuilder(no);
+        function displayResult(result) {
+            console.log(result)
+            let city = document.querySelector(".city");
+            city.textContent = `${result.name}, ${result.sys.country}`;
 
+            getOurDate();
+
+            let temp = document.querySelector(".temp");
+            temp.innerHTML = `${Math.round(result.main.temp)}<span>°C</span>`;
+            let weather = document.querySelector(".weather");
+            weather.textContent = `${result.weather[0].main}`;
+            let hiLow = document.querySelector('.hiLow');
+            hiLow.innerHTML = `${Math.round(result.main.temp_min)}<span>°C</span> / ${Math.round(result.main.temp_max)}<span>°C</span>`
         }
-        function dateBuilder(d) {
-            let mounth =
+        function getOurDate() {
+            const now = new Date();
+            const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let day = weekday[now.getDay()];
+            let nowDay = now.getDate();
+            let nowMonth = months[now.getMonth()];
+            
+            let showDate = document.querySelector(".date");
+            showDate.textContent = `${day}` + " " + `${nowDay}` + " " + `${nowMonth}`;
         }
 
-
-
-
+        //ToDoList
 
 window.addEventListener('load', () => {
     const form = document.querySelector('#newTasksForm');
