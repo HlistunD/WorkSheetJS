@@ -90,29 +90,57 @@
     display: flex;
     flex-direction: column;
     background-image: url(ny.avif);
-    width: 59%;
-    min-height: 47vh;
-    margin-left: 60px;
+    width: 40%;
+    max-width: 375px;
+    min-height: 410px;
     border-radius: 1.5rem;
-    box-shadow: 5px 5px 20px #0d0d0d;}
+    box-shadow: 5px 5px 20px #0d0d0d;
+
 }
 .dataContainer{
     display: flex;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
-    padding: 50px 15px 15px;
+    margin-top: 30%;
 }
 .searchBox {
-    width: 100%;
-    max-width: 70%;
+    width: 75%;
+    max-width: 100%;
     padding: 10px 15px;
-    color: #333333;
+    border-radius: 16px 0px 16px 0px;
+    border-bottom: 1px solid #c7f4f1;
+    color: #c7f4f1;
     outline: none;
+    transition: 0.2s ease-out;
 }
 .searchBox::placeholder {
-    color: #333333;
+    color: #0d0d0d;
     font-size: 17px;
 }
+.mainClass {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.location .city {
+    color: #0d0d0d;
+    text-shadow:5px 5px 20px #c7f4f1;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.location .date {
+    font-size: 20px;
+}
+.current .temp {
+    font-size: 35px;
+    margin: 10px 0px;
+    font-weight: 600;
+}
+
+
 
 
 

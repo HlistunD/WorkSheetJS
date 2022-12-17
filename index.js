@@ -115,6 +115,38 @@ for (let key of keys) {
             return inputArray.join("");
         }
 
+        const api = {
+            key: "a55b1163ed97c26eb450f23d0752a200",
+            baseurl: "https://openweathermap.org/"
+        }
+        const searchBox = document.querySelector('.searchBox');
+        searchBox.addEventListener('keypress', setQuery);
+
+        function setQuery(e) {
+            if (e.keyCode === 13 ) {
+                getResults(searchBox.value);
+            }
+        }
+
+        function getResults(query) {
+            fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+            .then(weather => {
+                return weather.json();
+            }).then(displayResults);
+        }
+        function displayResults(weather) {
+            console.log(weather)
+            let city = document.querySelector('.location .city');
+            city.innerText = `${weather.name}, ${weather.sys.country}`;
+        
+            let now = new Date();
+            let date = document.querySelector('.location .date');
+            date.innerText = dateBuilder(no);
+
+        }
+        function dateBuilder(d) {
+            let mounth =
+        }
 
 
 
