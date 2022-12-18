@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your planner 2023</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<div class="majorlHead">
+    <h1>Task list</h1>
+</div>
 
     <div class="app">
         <div class="calculator">
@@ -101,8 +106,10 @@
                     <span>=</span>
                 </div>
             </div>
+            
         </div>
 
+    <!--WEATHER API-->
 
     <div class="appWrap">
         <header class="dataContainer">
@@ -111,29 +118,36 @@
         </header>
         <main class="mainClass">
         <section class="location">
-            <div class="city">New Jersey</div>
+            <div class="city">New York</div>
             <div class="date">Friday,December 16</div>
         </section>
         <div class="current">
             <div class="temp">15<span>°C</span></div>
             <div class="weather">Rein</div>
             <div class="hiLow">13°F / 16°F</div>
-        </div>
+            </div>
         </main>
     </div>
+</header>
+
+    <!--TIMER-->
+    <div class="container-countdown">
+        <div class="timeCont">
+            <h4 class="textOnTopTime">Your activity</h4>
+            <h2 class="numbers">TIME</h2>
+        </div>
+            <button id="btnStart">Start</button>
+            </div>
+    </div>
 </div>
+
+
 <header>
-
-
-
-
-    <h1>Task list</h1>
     <form id="newTasksForm">
     <input type="text" placeholder="Put what are your planing..." id="newTaskInput"/>
     <input type="submit" id="taskSubmit" value="Add Task"/>
     </form>
 </header>
-
 <main>
     <section class="taskList">
         <h2>Tasks</h2>
@@ -147,15 +161,6 @@
                     <button class="delete">Delite</button>
                 </div>
             </div>
-
-            <div class="task">
-                <div class="content">
-                    <input type="text" class="text" value="My tasks" readonly/>
-                </div>
-                    <div class="actions">
-                    <button class="edit">Edit</button>
-                    <button class="delete">Delite</button>
-                </div>
             </div>-->
         </div>
 
