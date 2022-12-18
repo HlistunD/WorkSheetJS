@@ -139,7 +139,6 @@ for (let key of keys) {
             displayResult(result);
         }
         function displayResult(result) {
-            console.log(result)
             let city = document.querySelector(".city");
             city.textContent = `${result.name}, ${result.sys.country}`;
 
@@ -195,6 +194,45 @@ for (let key of keys) {
                 clearInterval(timerId);
             }
         }
+
+        //New YorkTimes
+
+        const apiData = {
+            key: "QC1r1NhEoX89ZIN29Aq6s471Xkq36Cvd",
+        }
+
+        const article = document.querySelector(".article");
+        const changeNews = document.querySelector(".changeNews")
+
+        changeNews.addEventListener('click', changeInfo);
+
+        async function changeInfo() {
+            const res = await fetch (`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiData.key}`);
+            const result = await res.json();
+            showNews(result);
+        }
+        function showNews(result) {
+            let title = document.querySelector('.title');
+            console.log(result)
+            title.innerHTML = `${result.results[0].source}`
+
+            let secondTitle = document.querySelector('.secondTitle');
+            secondTitle.innerHTML = `${result.results[0].title}`
+
+            let article = document.querySelector('.article')
+            article.innerHTML = `${result.results[0].abstract}`
+
+            let location = document.querySelector('.location')
+            location.innerHTML = `${result.results[0].geo_facet[0]}`
+            
+            let publishDate = document.querySelector('.publishDate')
+            publishDate.innerHTML = `${result.results[0].published_date}`
+
+        }
+
+        changeInfo()
+
+
 
 
         //ToDoList

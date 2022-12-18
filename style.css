@@ -1,8 +1,8 @@
 .app {
     display: flex;
-    align-items:flex-start;
+    justify-content: space-around;
     width: 40%;
-    margin-left: 8%;
+    margin-left: 30%;
     margin-top: 3%;
 }
 .calculator {
@@ -91,7 +91,7 @@
     background-image: url(ny.avif);
     min-width: 200px;
     min-height: 370px;
-    margin-left: 20%;
+    margin-left: 15%;
     border-radius: 1.5rem;
     box-shadow: 5px 5px 20px #0d0d0d;
 
@@ -100,7 +100,7 @@
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 .searchBox {
     width: 75%;
@@ -145,36 +145,83 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 20%;
+    margin-left: 15%;
     min-width: 200px;
     min-height: 370px;
     border-radius: 1.8rem;
     box-shadow: 5px 5px 20px #0d0d0d;
     color: #0d0d0d;
+    background-image: url(phone.jpg);
+    background-size: cover;
+    opacity: 0.8;
+
 }
 .timeCont {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.textOnTopTime{
-    
-}
 #btnStart {
     font-size: 30px;
     cursor: pointer;
-}
-#btnStart:hover {
-    color: #c7f4f1;
-    text-shadow:5px 5px 30px #c7f4f1;
+    color: #FFFFFF;
 }
 .timeCont {
     display: flex;
     justify-content: center;
 }
 .numbers {
-    font-size: 65px;
+    font-size: 60px;
+    color: #333333;
 }
+.newTimesContainer{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 15%;
+    background-image: url(pic.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.8rem;
+    box-shadow: 5px 5px 20px #0d0d0d;    
+}
+.datePage{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    text-align: center;
+    width: 40%;
+    min-width: 350px;
+}
+.title{
+    color: black;
+    font-size: 25px;
+    font-weight: 900;
+    padding: 7px;
+    border-radius: 10px;
+}
+.article, .location, .publishDate {
+    color: #0d0d0d;
+}
+.secondTitle{
+    color: #0d0d0d;
+    font-size: 20px;
+}
+.changeNews {
+    background-color: #E1F4F3;
+    color: #0d0d0d;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 25%;
+}
+.changeNews:hover {
+    background-color: #8b8985;
+    color: #c7f4f1;
+}
+
 
 
 
