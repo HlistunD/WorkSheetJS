@@ -174,6 +174,8 @@
     font-size: 60px;
     color: #333333;
 }
+
+
 .newTimesContainer{
     display: flex;
     justify-content:space-around;
@@ -189,7 +191,7 @@
     flex-direction: column;
     justify-content:space-evenly;
     text-align: center;
-    width: 40%;
+    width: 50%;
     min-width: 350px;
 }
 .title{

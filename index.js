@@ -201,38 +201,44 @@ for (let key of keys) {
             key: "QC1r1NhEoX89ZIN29Aq6s471Xkq36Cvd",
         }
 
-        const article = document.querySelector(".article");
-        const changeNews = document.querySelector(".changeNews")
+        const changeNews = document.querySelector(".changeNews");
 
-        changeNews.addEventListener('click', changeInfo);
-
-        async function changeInfo() {
+        async function dataInfo() {
             const res = await fetch (`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${apiData.key}`);
-            const result = await res.json();
-            showNews(result);
-        }
-        function showNews(result) {
+            const data = await res.json();
+            showNews(data.results)
+            }
+            
+            changeNews.addEventListener('click', showNews);
+
+            function showNews(data) {
+
+            for (let i = 0; i < 19; i++) {
+
             let title = document.querySelector('.title');
-            console.log(result)
-            title.innerHTML = `${result.results[0].source}`
+            console.log(data)
+            title.innerHTML = `${data.results[i].source}`;
 
             let secondTitle = document.querySelector('.secondTitle');
-            secondTitle.innerHTML = `${result.results[0].title}`
+            secondTitle.innerHTML = `${data.results[i].title}`
 
             let article = document.querySelector('.article')
-            article.innerHTML = `${result.results[0].abstract}`
+            article.innerHTML = `${data.results[i].abstract}`
 
             let location = document.querySelector('.location')
-            location.innerHTML = `${result.results[0].geo_facet[0]}`
+            location.innerHTML = `${data.results[i].geo_facet[0]}`
             
             let publishDate = document.querySelector('.publishDate')
-            publishDate.innerHTML = `${result.results[0].published_date}`
+            publishDate.innerHTML = `${data.results[i].published_date}`
+            }
+            }
 
-        }
+            dataInfo();
+            showNews();
 
-        changeInfo()
+/*
 
-
+*/
 
 
         //ToDoList
