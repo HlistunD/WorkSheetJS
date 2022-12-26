@@ -249,6 +249,13 @@ header{
     width: 100%;
     margin: 0 auto;
 }
+.letsWrite {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+    margin-top: 40px;
+    font-family: 'Nunito Sans', sans-serif;
+}
 .majorlHead {
     display: flex;
     justify-content: center;
@@ -264,7 +271,7 @@ h1{
     margin-bottom: 1rem;
 }
 input, button{
-    margin-top: 10%;
+    margin-top: 5%;
     appearance: none;
     border: none;
     outline: none;
@@ -307,11 +314,6 @@ main{
 }
 .taskList{
     padding: 1rem;
-}
-h2{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #706C61;
 }
 #tasks .task{
     display: flex;

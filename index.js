@@ -196,7 +196,7 @@ for (let key of keys) {
         }
 
         //New YorkTimes
-
+/*
         const apiData = {
             key: "QC1r1NhEoX89ZIN29Aq6s471Xkq36Cvd",
         }
@@ -235,8 +235,6 @@ for (let key of keys) {
 
             dataInfo();
             showNews();
-
-/*
 
 */
 
