@@ -98,7 +98,7 @@
 }
 .dataContainer{
     display: flex;
-    justify-content:flex-start;
+    justify-content:center;
     align-items: center;
     margin-top: 20%;
 }
@@ -123,14 +123,14 @@
     align-items: center;
     text-align: center;
 }
-.location .city {
+.locationWeather .city {
     color: #0d0d0d;
     text-shadow:5px 5px 20px #c7f4f1;
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 5px;
 }
-.location .date {
+.locationWeather .date {
     font-size: 20px;
 }
 .current .temp {
@@ -138,6 +138,7 @@
     margin: 10px 0px;
     font-weight: 600;
 }
+
 
 
 .container-countdown {
@@ -232,12 +233,6 @@
 
 
 
-
-
-
-
-
-
 body {
     display: flex;
     flex-direction: column;
@@ -246,17 +241,23 @@ body {
     color: #FFFFFF;
     font-family: 'Nunito Sans', sans-serif;
 }
-header{
-    padding: 2rem 1rem;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-}
-.letsWrite {
+.generallToDoContainer{
     display: flex;
     justify-content: center;
+    padding: 30px;
+}
+.secondToDoContainer{
+    display: flex;
+    justify-content:space-around;
+    align-items: baseline;
+    padding: 30px;
+}
+header{
+    max-width: 800px;
+    margin: 20px;
+}
+.letsWrite {
     color: #FFFFFF;
-    margin-top: 40px;
     font-family: 'Nunito Sans', sans-serif;
 }
 .majorlHead {
@@ -266,12 +267,6 @@ header{
 h1{
     font-size: 2.5rem;
     color: #706C61;
-}
-.newTasksForm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
 }
 input, button{
     margin-top: 5%;
@@ -287,7 +282,6 @@ input, button{
     color: #FFFFFF;
     padding: 1rem;
     border-radius: 1rem;
-    margin-right: 1rem;
     width: 400px;
     font-size: 1.25rem;
     font-family: 'Nunito Sans', sans-serif;
@@ -311,16 +305,13 @@ input, button{
 }
 main{
     flex: 1 1 0%;
-    max-width: 800px;
+    max-width: 100%;
     width: 100%;
-    margin: 0 auto;
-}
-.taskList{
-    padding: 1rem;
 }
 #tasks .task{
     display: flex;
     justify-content: space-between;
+    width: 400px;
     background-color: #706C61;
     padding: 1rem;
     border-radius: 1rem;
